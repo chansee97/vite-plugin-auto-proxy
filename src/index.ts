@@ -91,3 +91,6 @@ export default function createServiceProxyPlugin(options: ServiceProxyPluginOpti
 }
 
 export type { ServiceProxyPluginOptions } from './types'
+
+// Named export for better compatibility
+export { createServiceProxyPlugin }

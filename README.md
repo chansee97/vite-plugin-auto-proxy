@@ -28,6 +28,8 @@ pnpm add vite-plugin-auto-proxy -D
 
 ### 基本用法
 
+**默认导入（推荐）：**
+
 ```ts
 // vite.config.ts
 import { defineConfig } from 'vite'
@@ -48,6 +50,21 @@ export default defineConfig({
           websocket: 'wss://ws.example.com'
         }
       }
+    })
+  ]
+})
+```
+
+**命名导入：**
+
+```ts
+import { defineConfig } from 'vite'
+import { createServiceProxyPlugin } from 'vite-plugin-auto-proxy'
+
+export default defineConfig({
+  plugins: [
+    createServiceProxyPlugin({
+      // ... 配置项
     })
   ]
 })
@@ -105,87 +122,6 @@ export default defineConfig({
     })
   ]
 })
-```
-
-## API 说明
-
-### 插件选项
-
-#### `serviceConfig`
-- 类型: `FullServiceConfig`
-- 是否必需: `true`
-
-服务配置对象，包含不同环境下的服务地址配置。
-
-```ts
-interface FullServiceConfig {
-  [environment: string]: {
-    [serviceName: string]: string
-  }
-}
-```
-
-#### `proxyPrefix`
-- 类型: `string`
-- 默认值: `'proxy-'`
-
-代理路径前缀，用于生成代理路由。
-
-#### `enableProxy`
-- 类型: `boolean`
-- 默认值: `true`
-
-是否启用代理配置。在生产环境中通常设置为 `false`。
-
-#### `mountVariable`
-- 类型: `string`
-- 默认值: `'__URL_MAP__'`
-
-挂载到全局的变量名。
-
-#### `dts`
-- 类型: `string`
-- 默认值: `undefined`
-
-生成的 TypeScript 类型定义文件路径。
-
-### 生成的全局变量
-
-插件会在全局环境中注入一个变量（默认名为 `__URL_MAP__`），包含所有服务的代理映射信息：
-
-```ts
-const __URL_MAP__: {
-  [serviceName: string]: {
-    path: string      // 代理路径
-    rawPath: string   // 原始服务地址
-  }
-}
-```
-
-## 开发
-
-### 安装依赖
-
-```bash
-npm install
-```
-
-### 构建
-
-```bash
-npm run build
-```
-
-### 测试
-
-```bash
-npm test
-```
-
-### 实时构建
-
-```bash
-npm run dev
 ```
 
 ## 许可证
