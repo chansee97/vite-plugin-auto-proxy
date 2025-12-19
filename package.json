@@ -1,0 +1,52 @@
+{
+  "name": "vite-plugin-auto-proxy",
+  "version": "1.0.0",
+  "description": "A Vite plugin for automatically generating proxy configurations and mounting service URLs to global variables",
+  "keywords": [
+    "vite",
+    "plugin",
+    "proxy",
+    "auto-proxy",
+    "development"
+  ],
+  "author": "chansee97 <chen.dev@foxmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chansee97/vite-plugin-auto-proxy.git"
+  },
+  "bugs": {
+    "url": "https://github.com/chansee97/vite-plugin-auto-proxy/issues"
+  },
+  "homepage": "https://github.com/chansee97/vite-plugin-auto-proxy#readme",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest",
+    "lint": "eslint src --fix",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "@types/node": "^18.0.0",
+    "eslint": "^8.0.0",
+    "tsup": "^7.0.0",
+    "typescript": "^5.0.0",
+    "vite": "^5.0.0",
+    "vitest": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "dependencies": {
+    "bumpp": "^10.3.2"
+  }
+}
