@@ -1,6 +1,6 @@
 {
   "name": "vite-plugin-auto-proxy",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A Vite plugin for automatically generating proxy configurations and mounting service URLs to global variables",
   "keywords": [
     "vite",
@@ -13,7 +13,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/chansee97/vite-plugin-auto-proxy.git"
+    "url": "git+https://github.com/chansee97/vite-plugin-auto-proxy.git"
   },
   "bugs": {
     "url": "https://github.com/chansee97/vite-plugin-auto-proxy/issues"
@@ -52,8 +52,5 @@
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
-  },
-  "dependencies": {
-    "bumpp": "^10.3.2"
   }
 }

@@ -7,7 +7,7 @@ export default defineConfig({
   sourcemap: false,
   clean: true,
   dts: true,
-  minify: true,
+  minify: false,
   target: 'es2020',
   outDir: 'dist',
   // Ensure proper module exports
